@@ -2,25 +2,37 @@
 @import 'compass/utilities';
 
 $padding: 10px;
-$width: 1000px - ($padding * 2);
-$height: 460px - ($padding * 2);
-
-$textarea-width: ($width - $padding) / 2;
-$textarea-height: $height - image_height('logo.png') - $padding;
 
 body {
-  form {
-    background-color: #181A3A;
-    @include border-radius($padding);
-    padding: $padding;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
 
-    width: $width;
-    height: $height;
-    @include clearfix;
+  #resize {
+    position: absolute;
+    bottom: $padding + 22px;
+    right: 16px;
+
+    -apple-dashboard-region: dashboard-region(control rectangle);
+  }
+
+  form {
+    position: absolute;
+    background: url('banding.png') repeat #181A3A;
+    @include border-radius($padding);
+
+    top: $padding;
+    left: $padding;
+    bottom: $padding;
+    right: $padding;
 
     header {
       margin-bottom: $padding;
-      position: relative;
+      position: absolute;
+      top: $padding;
+      left: $padding;
+      right: $padding;
 
       @include background(
         linear-gradient(#eee, #f8f8f8)
@@ -43,9 +55,10 @@ body {
       #error {
         position: absolute;
         right: 0;
-        width: $width - image_width('logo.png') - $padding;
-        height: image_height('logo.png') - ($padding * 2);
-        margin-left: $padding;
+        top: 0;
+        bottom: 0;
+        left: image_width('logo.png') + $padding;
+
         @include border-right-radius($padding / 2);
 
         padding: $padding 0;
@@ -72,20 +85,33 @@ body {
     }
   }
 
-  textarea {
-    @include float-left;
-    border: none;
-    background: transparent;
-    font: {
-      family: Monaco, Consolas, "Lucida Console", monospace;
-      size: 10px;
-    }
-    color: #DEF;
-    width: $textarea-width;
-    height: $textarea-height;
+  div {
+    position: absolute;
+    bottom: $padding;
+    right: $padding;
+    left: $padding;
+    top: ($padding * 2) + image_height('logo.png');
 
-    &#javascript {
-      margin-left: $padding 
+    textarea {
+      position: absolute;
+
+      border: none;
+      background: transparent;
+      font: {
+        family: Monaco, Consolas, "Lucida Console", monospace;
+        size: 10px;
+      }
+      color: #DEF;
+      height: 100%;
+      width: 49%;
+
+      &#coffee-script {
+        left: 0;
+      }
+
+      &#javascript {
+        right: 0;
+      }
     }
   }
 }

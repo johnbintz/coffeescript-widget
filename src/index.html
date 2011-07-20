@@ -19,20 +19,41 @@ jQuery(->
   recompile()
 
   $('a').click(-> widget.openURL($(this).attr('href')))
+
+  growboxInset = null
+
+  mouseUp = ->
+    $(document).unbind('mousemove mouseup')
+    false
+
+  mouseMove = (event) ->
+    x = event.pageX + growboxInset.x
+    y = event.pageY + growboxInset.y
+
+    window.resizeTo(x, y)
+    false
+    
+  $('#resize').mousedown (event) ->
+    $(document).mousemove(mouseMove).mouseup(mouseUp)
+    growboxInset = {x:(window.innerWidth - event.pageX), y:(window.innerHeight - event.pageY)}
+    false
 )
     </script>
   </head>
   <body>
     <form>
       <header>
-      <a href="http://jashkenas.github.com/coffee-script/" target="_new" id="logo">CoffeeScript</a>
+        <a href="http://jashkenas.github.com/coffee-script/" target="_new" id="logo">CoffeeScript</a>
         <div id="error"></div>
       </header>
-      <textarea name="coffee-script" id="coffee-script">class HelloWorld
+      <div>
+        <textarea name="coffee-script" id="coffee-script">class HelloWorld
   constructor: ->
     console.log("Hello world!")</textarea>
-      <textarea name="javascript" id="javascript"></textarea>
+        <textarea name="javascript" id="javascript"></textarea>
+      </div>
     </form>
+    <img id='resize' src='/System/Library/WidgetResources/resize.png' />
   </body>
 </html>
 
