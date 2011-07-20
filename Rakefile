@@ -11,3 +11,9 @@ task :build do
   cp CoffeeScript::Source.bundled_path, 'CoffeeScript.wdgt'
 end
 
+desc 'build a release widget'
+task :release => :build do
+  mkdir_p 'pkg'
+  system %{tar jcvf pkg/CoffeeScript-#{File.read('VERSION').strip}.tar.bz2 CoffeeScript.wdgt}
+end
+
