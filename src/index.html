@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>CoffeeScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="coffee-script.js"></script>
+    <script type="text/coffeescript">
+jQuery(->
+  recompile = ->
+    try
+      compiledJS = CoffeeScript.compile($('#coffee-script').val(), bare: true)
+      $('#javascript').val(compiledJS)
+
+      $('#error').hide()
+    catch error
+      $('#error').show().html("<span>#{error.message}</span>")
+
+  $('#coffee-script').bind('change keyup', recompile)
+  recompile()
+
+  $('a').click(-> widget.openURL($(this).attr('href')))
+)
+    </script>
+  </head>
+  <body>
+    <form>
+      <header>
+      <a href="http://jashkenas.github.com/coffee-script/" target="_new" id="logo">CoffeeScript</a>
+        <div id="error"></div>
+      </header>
+      <textarea name="coffee-script" id="coffee-script">class HelloWorld
+  constructor: ->
+    console.log("Hello world!")</textarea>
+      <textarea name="javascript" id="javascript"></textarea>
+    </form>
+  </body>
+</html>
+

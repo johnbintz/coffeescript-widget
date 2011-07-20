@@ -1,0 +1,92 @@
+body form {
+  background-color: #181A3A;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 620px;
+  height: 340px;
+  overflow: hidden;
+  *zoom: 1;
+}
+body form header {
+  margin-bottom: 10px;
+  position: relative;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #f8f8f8));
+  background: -webkit-linear-gradient(#eeeeee, #f8f8f8);
+  background: -moz-linear-gradient(#eeeeee, #f8f8f8);
+  background: -o-linear-gradient(#eeeeee, #f8f8f8);
+  background: -ms-linear-gradient(#eeeeee, #f8f8f8);
+  background: linear-gradient(#eeeeee, #f8f8f8);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  height: 50px;
+  overflow: hidden;
+}
+body form header a {
+  background: url("logo.png") top left no-repeat;
+  width: 225px;
+  height: 50px;
+  display: block;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  position: absolute;
+  cursor: pointer;
+}
+body form header #error {
+  position: absolute;
+  right: 0;
+  width: 385px;
+  height: 30px;
+  margin-left: 10px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -o-border-top-right-radius: 5px;
+  -ms-border-top-right-radius: 5px;
+  -khtml-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -o-border-bottom-right-radius: 5px;
+  -ms-border-bottom-right-radius: 5px;
+  -khtml-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px 0;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffedec), color-stop(100%, #ff9a95));
+  background: -webkit-linear-gradient(#ffedec, #ff9a95);
+  background: -moz-linear-gradient(#ffedec, #ff9a95);
+  background: -o-linear-gradient(#ffedec, #ff9a95);
+  background: -ms-linear-gradient(#ffedec, #ff9a95);
+  background: linear-gradient(#ffedec, #ff9a95);
+  text-align: right;
+}
+body form header #error span {
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #D00;
+  padding-right: 10px;
+}
+body textarea {
+  display: inline;
+  float: left;
+  border: none;
+  background: transparent;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  font-size: 10px;
+  color: #DEF;
+  width: 305px;
+  height: 280px;
+}
+body textarea#javascript {
+  margin-left: 10px;
+}

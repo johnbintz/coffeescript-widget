@@ -1,0 +1,91 @@
+@import 'compass/css3';
+@import 'compass/utilities';
+
+$padding: 10px;
+$width: 640px - ($padding * 2);
+$height: 360px - ($padding * 2);
+
+$textarea-width: ($width - $padding) / 2;
+$textarea-height: $height - image_height('logo.png') - $padding;
+
+body {
+  form {
+    background-color: #181A3A;
+    @include border-radius($padding);
+    padding: $padding;
+
+    width: $width;
+    height: $height;
+    @include clearfix;
+
+    header {
+      margin-bottom: $padding;
+      position: relative;
+
+      @include background(
+        linear-gradient(#eee, #f8f8f8)
+      );
+      @include border-radius($padding / 2);
+      height: image_height('logo.png');
+      overflow: hidden;
+
+      a {
+        background: url('logo.png') top left no-repeat;
+        width: image_width('logo.png');
+        height: image_height('logo.png');
+        display: block;
+        @include hide-text;
+        position: absolute;
+
+        cursor: pointer;
+      }
+
+      #error {
+        position: absolute;
+        right: 0;
+        width: $width - image_width('logo.png') - $padding;
+        height: image_height('logo.png') - ($padding * 2);
+        margin-left: $padding;
+        @include border-right-radius($padding / 2);
+
+        padding: $padding 0;
+
+        @include background(
+          linear-gradient(#ffedec, #ff9a95)
+        );
+
+        text-align: right;
+
+        span {
+          text: {
+            transform: uppercase;
+          }
+          font: {
+            family: "Helvetica Neue", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+            size: 13px;
+            weight: bold;
+          }
+          color: #D00;
+          padding-right: $padding;
+        }
+      }
+    }
+  }
+
+  textarea {
+    @include float-left;
+    border: none;
+    background: transparent;
+    font: {
+      family: Monaco, Consolas, "Lucida Console", monospace;
+      size: 10px;
+    }
+    color: #DEF;
+    width: $textarea-width;
+    height: $textarea-height;
+
+    &#javascript {
+      margin-left: $padding 
+    }
+  }
+}
