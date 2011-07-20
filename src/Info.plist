@@ -21,9 +21,9 @@
   <key>CloseBoxInsetY</key>
   <integer>10</integer>
   <key>Width</key>
-  <integer>660</integer>
+  <integer>1020</integer>
   <key>Height</key>
-  <integer>380</integer>
+  <integer>480</integer>
   <key>MainHTML</key>
   <string>index.html</string>
 </dict>

@@ -2,8 +2,8 @@
 @import 'compass/utilities';
 
 $padding: 10px;
-$width: 640px - ($padding * 2);
-$height: 360px - ($padding * 2);
+$width: 1000px - ($padding * 2);
+$height: 460px - ($padding * 2);
 
 $textarea-width: ($width - $padding) / 2;
 $textarea-height: $height - image_height('logo.png') - $padding;

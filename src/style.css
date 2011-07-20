@@ -7,8 +7,8 @@ body form {
   -khtml-border-radius: 10px;
   border-radius: 10px;
   padding: 10px;
-  width: 620px;
-  height: 340px;
+  width: 980px;
+  height: 440px;
   overflow: hidden;
   *zoom: 1;
 }
@@ -44,7 +44,7 @@ body form header a {
 body form header #error {
   position: absolute;
   right: 0;
-  width: 385px;
+  width: 745px;
   height: 30px;
   margin-left: 10px;
   -moz-border-radius-topright: 5px;
@@ -84,8 +84,8 @@ body textarea {
   font-family: Monaco, Consolas, "Lucida Console", monospace;
   font-size: 10px;
   color: #DEF;
-  width: 305px;
-  height: 280px;
+  width: 485px;
+  height: 380px;
 }
 body textarea#javascript {
   margin-left: 10px;
